@@ -106,8 +106,8 @@ export default function Home() {
       {transactions.length === 0 && <div className="w-full mx-auto p-4">
         <p className="text-center">Nincsenek tranzakciók importálva</p>
       </div>}
-      {transactions.length !== 0 && <div>
-        <Table className="text-xs min-w-full">
+      {transactions.length !== 0 && <div className=" w-4/5 ">
+        <Table className="">
           <TableHeader>
             <TableRow className="p-1 m-0">
               <TableHead className="py-1 px-2 m-0">Kivonat száma</TableHead>
