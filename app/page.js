@@ -60,8 +60,8 @@ export default function Home() {
     // XLSX.writeFile(workbook, `${"teszt"}.xlsx`);
     const workbook = XLSX.utils.book_new()
     const worksheet = XLSX.utils?.json_to_sheet(transactions)
-    XLSX.utils.book_append_sheet(workbook, worksheet, "bankszámlakivonat")
-    XLSX.writeFile(workbook, `${"bankszámlakivonat"}.xlsx`)
+    XLSX.utils.book_append_sheet(workbook, worksheet, "bank_statements")
+    XLSX.writeFile(workbook, `${"trium_bankstatements"}.xlsx`)
   }
 
   const deleteTransactions = () => {
