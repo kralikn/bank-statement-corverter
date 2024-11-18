@@ -2,8 +2,11 @@
 
 import { fileSchema } from './schemas';
 
+// import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs'
 const pdfjsLib = require('pdfjs-dist/legacy/build/pdf.mjs');
 pdfjsLib.disableWorker = true
+// pdfjsLib.GlobalWorkerOptions.workerSrc = ''
+// pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.mjs';
 
 export async function extractBankTransactions(data) {
 
