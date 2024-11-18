@@ -2,11 +2,12 @@
 
 import { fileSchema } from './schemas';
 
-// import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs'
-const pdfjsLib = require('pdfjs-dist/legacy/build/pdf.mjs');
-pdfjsLib.disableWorker = true
+// import { getDocument } from "pdfjs-dist/legacy/build/pdf.mjs";
+// const pdfjsLib = require('pdfjs-dist/legacy/build/pdf.mjs');
+// pdfjsLib.disableWorker = true
 // pdfjsLib.GlobalWorkerOptions.workerSrc = ''
-// pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.mjs';
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.min.mjs'
+// pdfjsLib.GlobalWorkerOptions.workerSrc = '/build/pdf.worker.mjs';
 
 export async function extractBankTransactions(data) {
 
@@ -18,6 +19,7 @@ export async function extractBankTransactions(data) {
     throw new Error(errors.join(','));
   }
   const pdfData = await file.arrayBuffer()
+  // const pdfDoc = await pdfjsLib.getDocument({ data: pdfData }).promise
   const pdfDoc = await pdfjsLib.getDocument({ data: pdfData }).promise
 
   const extractedTexts = []

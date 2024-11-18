@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
           {children}
         </Providers>
       </body>
+      {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.min.mjs" async ></script> */}
     </html>
   );
 }
