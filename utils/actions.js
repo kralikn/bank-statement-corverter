@@ -6,7 +6,9 @@ import { fileSchema } from './schemas';
 // const pdfjsLib = require('pdfjs-dist/legacy/build/pdf.mjs');
 // pdfjsLib.disableWorker = true
 // pdfjsLib.GlobalWorkerOptions.workerSrc = ''
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.min.mjs'
+// import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.min.mjs'
+import * as pdfjs from 'pdfjs-dist/build/pdf.min.mjs';
+await import('pdfjs-dist/build/pdf.worker.min.mjs');
 // pdfjsLib.GlobalWorkerOptions.workerSrc = '/build/pdf.worker.mjs';
 
 export async function extractBankTransactions(data) {
